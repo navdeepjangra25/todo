@@ -1,7 +1,7 @@
 import React, {useState } from 'react';
 import ThemeContext from './ThemeContext';
 
-const ThemeState = (props) =>{
+export const ThemeState = (props) =>{
     const [todoText, setTodoText] = useState('');
     const [todos, setTodos] = useState([
         {
@@ -22,19 +22,27 @@ const ThemeState = (props) =>{
     ]);
 
 
-    const updateTodos = (value)=>{
+    const addNewTodo = (value)=>{
+        console.log(value);
         setTodos([value, ...todos]);
+    }
+
+    const updateTodos = (value)=>{
+        console.log(value);
+        setTodos(value);
     }
 
     const updateTodoText = (value)=>{
         setTodoText([value]);
     }
 
+    //const state = {todoText, todos, updateTodos, updateTodoText}
+
     return (
-        <ThemeContext.provider value={todoText, todos, updateTodos, updateTodoText}>
+        <ThemeContext.Provider value={{todoText, todos, addNewTodo, updateTodos, updateTodoText}}>
             {props.children}
-        </ThemeContext.provider>
+        </ThemeContext.Provider>
     )
 }
 
-export default ThemeState;
+//export default ThemeState;

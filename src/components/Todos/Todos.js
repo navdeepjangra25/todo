@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import "./Todos.css";
 import TodoItem from "./TodoItem";
 import AddItem from "./AddItem";
-import ThemeState from '../../Contexts/ThemeState';
-import { useContext } from 'react';
+import ThemeContext from '../../Contexts/ThemeContext';
+import { useContext, useEffect } from 'react';
 
 const Todos = () => {
-  const state = useContext(ThemeState)
-  console.log(state)
-
-
+  const state = useContext(ThemeContext)
   const changeTodoText = (e) => {
-    //setTodoText(e.target.value);
     state.updateTodoText(e.target.value)
-};
+  };
+
+  useEffect(()=>{
+    console.log(state.todos);
+  }, [state.todos])
 
   const addTodo = () => {
     const newTodo = {
@@ -23,14 +23,11 @@ const Todos = () => {
       text: state.todoText,
       isDone: false,
     };
-    //setTodos([newTodo, ...todos]);
-    state.updateTodos(newTodo)
-    //setTodoText("");
+    state.addNewTodo(newTodo)
     state.updateTodoText('')
   };
 
   const completeTodo = (id) =>{
-      console.log(id);
       const updatedTodos = state.todos.map(todo => {
           if(todo.id === id){
               todo.isDone=true;
@@ -38,14 +35,12 @@ const Todos = () => {
           }
           return todo;
       })
-      //console.log(updatedTodos)
-      //setTodos(updatedTodos);
       state.updateTodos(updatedTodos)
   };
 
   const deleteTodo = (id) => {
+    console.log(id);
    const updatedTodos = state.todos.filter(todo =>todo.id !== id);
-   //setTodos(updatedTodos);
    state.updateTodos(updatedTodos)
 
   };
