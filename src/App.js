@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 //import Todos from "./components/Todos/Todos";
 import {ThemeState} from './Contexts/ThemeState';
-import Counter from './components/Counter/Counter';
+import Counter from './components/Counter/CounterWithReducer';
 const App = () => {
   return (
    <div className="container-fluid vw-100 vh-100 ">
