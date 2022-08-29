@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const AddItem = (props) => {
     const{todoText,changeTodoText,addTodo}=props;
+    useEffect(()=>{
+      console.log('add item rendered');
+    })
     return (
         <div className="input-group mb-3">
           <input
@@ -20,5 +23,5 @@ const AddItem = (props) => {
     );
 };
 
-export default AddItem;
+export default React.memo(AddItem);
 

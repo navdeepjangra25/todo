@@ -23,12 +23,12 @@ export const ThemeState = (props) =>{
 
 
     const addNewTodo = (value)=>{
-        console.log(value);
+        //console.log(value);
         setTodos([value, ...todos]);
     }
 
     const updateTodos = (value)=>{
-        console.log(value);
+        //console.log(value);
         setTodos(value);
     }
 
