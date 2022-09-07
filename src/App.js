@@ -1,17 +1,20 @@
 import React from "react";
 import "./App.css";
+import ShoppersStop from './components/ShoppersStop/ShoppersStop';
 //import Todos from "./components/Todos/Todos";
 import {ThemeState} from './Contexts/ThemeState';
-import Signup from './components/Signup/Signup';
+// import Signup from './components/Signup/Signup';
 //import HookTimer from './components/UseRefExample/HookTImer';
 //import MemoExample from './components/UseMemoExample/MemoExample';
 //import Counter from './components/Counter/CounterWithReducer';
 const App = () => {
+  console.log(<ShoppersStop/>)
   return (
-   <div className="container-fluid vw-100 vh-100 ">
-     <div className="d-flex justify-content-center align-items-center vh-100">
+   <div className="container-fluid">
+     <div className="d-flex justify-content-center align-items-center">
        <ThemeState>
-         <Signup/>
+        <ShoppersStop/>
+         {/* <Signup/> */}
         {/* <HookTimer/> */}
         {/* <MemoExample/> */}
           {/* <Todos/> */}
