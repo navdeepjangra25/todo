@@ -1,5 +1,7 @@
 import React, { useEffect, useState} from 'react'
-const Cart = ({cart}) => {
+import {useSelector, useDispatch} from 'react-redux'
+const Cart = () => {
+  const cart = useSelector((state) => state.shop.cart)
   const [total, setTotal] = useState(0)
   return (
     <div style={{

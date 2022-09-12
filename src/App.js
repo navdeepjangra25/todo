@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import ShoppersStop from './components/ShoppersStop/ShoppersStop';
+// import ShoppersStop from './components/ShoppersStop/ShoppersStop';
+import ShoppersStop from './components/ShoppersStopHooks/ShoppersStop';
 //import Todos from "./components/Todos/Todos";
 import {ThemeState} from './Contexts/ThemeState';
 // import Signup from './components/Signup/Signup';
@@ -8,7 +9,6 @@ import {ThemeState} from './Contexts/ThemeState';
 //import MemoExample from './components/UseMemoExample/MemoExample';
 //import Counter from './components/Counter/CounterWithReducer';
 const App = () => {
-  console.log(<ShoppersStop/>)
   return (
    <div className="container-fluid">
      <div className="d-flex justify-content-center align-items-center">

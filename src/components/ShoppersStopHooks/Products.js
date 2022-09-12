@@ -1,8 +1,12 @@
 
 import React from 'react'
-import {connect} from 'react-redux'
-import {addToCart} from './../../redux/Shopping/shopping-actions'
-const Products = ({products, cart, addToCart})=>{
+// import {connect} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import {addToCart} from '../../redux/Shopping/shopping-actions'
+const Products = ()=>{
+    const products = useSelector((state) => state.shop.products)
+    const cart = useSelector((state) => state.shop.cart)
+    const dispatch = useDispatch()
     return(
         <div style={{
             display:'flex',
@@ -24,7 +28,7 @@ const Products = ({products, cart, addToCart})=>{
                     ?
                     <button style={{padding:5, border:0, borderRadius:5,backgroundColor:"red", color:"white"}} >Remove from Cart</button>
                     :
-                    <button style={{padding:5, border:0, borderRadius:5,backgroundColor:"green", color:"white"}} onClick={()=>addToCart(prod.id)}>Add to Cart</button>
+                    <button style={{padding:5, border:0, borderRadius:5,backgroundColor:"green", color:"white"}} onClick={()=>dispatch(addToCart(prod.id))}>Add to Cart</button>
                     }
                     
                     
@@ -36,10 +40,4 @@ const Products = ({products, cart, addToCart})=>{
     )
 }
 
-const mapDispatchToProps = dispatch =>{
-    return {
-        addToCart : (id) => dispatch(addToCart(id))
-    }
-} 
-
-export default connect(null,mapDispatchToProps)(Products)
+export default Products

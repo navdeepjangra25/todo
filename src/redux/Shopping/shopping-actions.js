@@ -1,6 +1,16 @@
 import * as actionTypes from './shopping-types'
 
+export const setProducts = (products) => {
+    return {
+        type: actionTypes.SET_PRODUCTS,
+        payload: {
+            products: products
+        }
+    }
+}
+
 export const addToCart = (itemID) => {
+    console.log(itemID);
     return {
         type: actionTypes.ADD_TO_CART,
         payload: {
