@@ -1,24 +1,24 @@
 import React from "react";
 import "./App.css";
 // import ShoppersStop from './components/ShoppersStop/ShoppersStop';
-import ShoppersStop from './components/ShoppersStopHooks/ShoppersStop';
+//import ShoppersStop from './components/ShoppersStopHooks/ShoppersStop';
 //import Todos from "./components/Todos/Todos";
 import {ThemeState} from './Contexts/ThemeState';
 // import Signup from './components/Signup/Signup';
 //import HookTimer from './components/UseRefExample/HookTImer';
 //import MemoExample from './components/UseMemoExample/MemoExample';
-//import Counter from './components/Counter/CounterWithReducer';
+import Counter from './components/Counter/CounterWithReducer';
 const App = () => {
   return (
    <div className="container-fluid">
      <div className="d-flex justify-content-center align-items-center">
        <ThemeState>
-        <ShoppersStop/>
+        {/* <ShoppersStop/> */}
          {/* <Signup/> */}
         {/* <HookTimer/> */}
         {/* <MemoExample/> */}
           {/* <Todos/> */}
-          {/* <Counter/> */}
+          <Counter/>
        </ThemeState>
      </div>
    </div>
